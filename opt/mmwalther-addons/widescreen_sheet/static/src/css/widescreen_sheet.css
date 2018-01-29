@@ -1,0 +1,33 @@
+@charset "utf-8";
+.openerp .oe_form_editable .oe_form_required.oe_form_field_one2many table.oe_list_content, .openerp .oe_form_editable .oe_form_required.oe_form_field_many2many table.oe_list_content {
+  background-color: #d2d2ff !important;
+}
+.openerp .oe_form_editable .oe_form_invalid.oe_form_field_one2many table.oe_list_content, .openerp .oe_form_editable .oe_form_invalid.oe_form_field_many2many table.oe_list_content {
+  background-color: #ff6666 !important;
+}
+
+.o_form_sheet {
+  min-width: 650px;
+  max-width: 100% !important;
+  margin: 16px !important;
+}
+.o_form_view div.oe_chatter {
+  box-sizing: border-box;
+  min-width: 682px;
+  max-width: 95% !important;
+  margin: 16px;
+  padding: 16px 16px 48px;
+}
+.openerp .oe_form_field_one2many, .openerp .oe_form_field_many2many {
+  overflow-x: auto;
+}
+.modal-dialog .o_form_sheet {
+  width: initial !important;
+}
+.modal-dialog {
+  width: 90%;
+  height: 90%;
+}
+.openerp .oe_left {
+  width: 505px;
+}

@@ -10,7 +10,7 @@
         Make the form sheet view use entire screen width
     """,
     'author': 'Michael Walther',
-    'website': 'www.mmwalther.name',
+    'website': 'http://www.mmwalther.name',
     'depends': ["base"],
     'init_xml': [],
     'data': [

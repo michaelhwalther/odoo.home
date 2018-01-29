@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from openerp.models import AbstractModel
-import logging
+from odoo.models import AbstractModel
+from odoo import api
+from odoo.tools import config
 
+import logging
 _logger = logging.getLogger(__name__)
 
-from openerp.tools import config
 
 config['publisher_warranty_url'] = ''
 
@@ -13,8 +14,8 @@ config['publisher_warranty_url'] = ''
 class publisher_warranty_contract(AbstractModel):
     _inherit = 'publisher_warranty.contract'
 
-    def update_notification(self, cr, uid, ids, cron_mode=True,
-                            context=None):
+    @api.multi
+    def update_notification(self, cron_mode=True):
 
         _logger.info("NO More Spying Stuff")
 

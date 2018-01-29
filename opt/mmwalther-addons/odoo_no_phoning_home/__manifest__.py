@@ -9,7 +9,7 @@
     'description': """
         Remove Few Phoning home feature effect from Core OpenERP.
     """,
-    'author': 'Ruchir Shukla',
+    'author': 'Ruchir Shukla, Michael Walther',
     'website': 'www.bizzappdev.com',
     'depends': ["mail",'web'],
     'init_xml': [],

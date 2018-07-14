@@ -23,4 +23,5 @@ Electronic devices in a home
     ],
     'installable': True,
     'auto_install': False,
+    'application': True,
 }

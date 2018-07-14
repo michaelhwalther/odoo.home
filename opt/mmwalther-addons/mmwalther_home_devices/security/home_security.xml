@@ -19,9 +19,9 @@
 <data noupdate="1">
 
 	<!-- Associate default users -->
-    <record id="base.default_user" model="res.users">
-        <field name="groups_id" eval="[(4,ref('account.group_account_manager'))]"/>
-    </record>
+<!--     <record id="base.default_user" model="res.users"> -->
+<!--         <field name="groups_id" eval="[(4,ref('account.group_account_manager'))]"/> -->
+<!--     </record> -->
 
 
 <!--     <record id="account_move_comp_rule" model="ir.rule"> -->

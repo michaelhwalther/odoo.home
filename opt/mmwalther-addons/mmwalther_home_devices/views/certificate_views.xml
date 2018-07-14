@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+<!-- ______________________________________________________________________ -->
+<!-- Simple UI to manage certificates used in the home devices              -->
+
+
+
+<!-- ______________________________________________________________________ -->
+<!-- Tabular View                                                           -->
+
+		<record id="mmwalther_certificate_tree" model="ir.ui.view">
+			<field name="name">Certificate List</field>
+			<field name="model">home.certificate</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<tree string="Certificate List">
+					<field name="name"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+<!-- ______________________________________________________________________ -->
+<!-- Search View                                                            -->
+
+		<record id="mmwalther_certificate_search" model="ir.ui.view">
+			<field name="name">Certificate Search</field>
+			<field name="model">home.certificate</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<filter name="all_active" string="Active" domain="[('state','!=','unused')]"/>
+                    <group expand="0" string="Group By">
+					</group>
+				</search>
+			</field>
+		</record>
+
+<!-- ______________________________________________________________________ -->
+<!-- Form View                                                              -->
+
+		<record id="mmwalther_certificate_form" model="ir.ui.view">
+			<field name="name">Certificate Form</field>
+			<field name="model">home.certificate</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<form string="Certificate Form">
+					<header>
+						<field name="state" widget="statusbar" clickable="1" statusbar_visible="active,unused" />
+					</header>
+					<sheet>
+						<div class="oe_title oe_left">
+							<div class="oe_edit_only">
+								<label for="name" />
+							</div>
+							<h1>
+								<field name="name" default_focus="1" placeholder="Name" />
+							</h1>
+						</div>
+						<div class="oe_right oe_button_box" name="buttons">
+						</div>
+			
+						<group col="4">
+							<group colspan="2">
+							</group>
+							<group colspan="2">
+							</group>
+						</group>
+						<group col="2">
+							<field name="description" nolabel="1"/>
+						</group>
+			
+						<notebook>
+							<page name="key" string="Public Key" autofocus="autofocus">
+								<field name="public_key" nolabel="1"/>
+							</page>
+							<page name="private_key" string="Private Key" groups="mmwalther_home_devices.group_techadmin">
+								<field name="private_key" nolabel="1"/>
+							</page>
+						</notebook>
+					</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+				</form>
+			</field>            
+		</record>
+
+
+
+<!-- ______________________________________________________________________ -->
+<!-- Menu and View                                                          -->
+
+		<record id="mmwalther_certificate_action" model="ir.actions.act_window">
+			<field name="name">Certificates</field>
+			<field name="res_model">home.certificate</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_all_active':1}</field>
+		</record>
+		<menuitem  id="mmwalther_certificate_menu" 
+			       name="Certificates"
+			       parent="menu_home" 
+                   sequence="10"
+			       action="mmwalther_certificate_action" />
+
+	</data>
+</odoo>

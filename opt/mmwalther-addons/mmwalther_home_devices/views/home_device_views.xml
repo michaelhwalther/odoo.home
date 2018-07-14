@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+<!-- ______________________________________________________________________ -->
+<!-- Simple UI to manage Home Device data                                   -->
+
+
+
+<!-- ______________________________________________________________________ -->
+<!-- Tabular View                                                           -->
+
+		<record id="mmwalther_home_device_tree" model="ir.ui.view">
+			<field name="name">Home Devices List</field>
+			<field name="model">home.device</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<tree string="Home Device List">
+					<field name="name"/>
+					<field name="type"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+<!-- ______________________________________________________________________ -->
+<!-- Search View                                                            -->
+
+		<record id="mmwalther_home_device_search" model="ir.ui.view">
+			<field name="name">Home Device Search</field>
+			<field name="model">home.device</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<filter name="all_active" string="Active" domain="[('state','!=','unused')]"/>
+                    <group expand="0" string="Group By">
+					</group>
+				</search>
+			</field>
+		</record>
+
+<!-- ______________________________________________________________________ -->
+<!-- Form View                                                              -->
+
+		<record id="mmwalther_home_device_form" model="ir.ui.view">
+			<field name="name">Home Device Form</field>
+			<field name="model">home.device</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<form string="Home Device Form">
+					<header>
+						<field name="state" widget="statusbar" clickable="1" statusbar_visible="active,unused" />
+					</header>
+					<sheet>
+						<div class="oe_title oe_left">
+							<div class="oe_edit_only">
+								<label for="name" />
+							</div>
+							<h1>
+								<field name="name" default_focus="1" placeholder="Name" />
+							</h1>
+						</div>
+						<div class="oe_right oe_button_box" name="buttons">
+						</div>
+			
+						<group col="4">
+							<group colspan="2">
+								<field name="type" attrs="{'readonly':[('state','in',['done'])]}"/>
+							</group>
+							<group colspan="2">
+							</group>
+						</group>
+						<group col="2">
+							<field name="description" nolabel="1"/>
+						</group>
+			
+						<notebook>
+							<page name="sometab" string="Some Tab" autofocus="autofocus">
+							</page>
+						</notebook>
+					</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+				</form>
+			</field>            
+		</record>
+
+
+
+<!-- ______________________________________________________________________ -->
+<!-- Menu and View                                                          -->
+
+		<record id="mmwalther_home_device_action" model="ir.actions.act_window">
+			<field name="name">Home Devices</field>
+			<field name="res_model">home.device</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_all_active':1}</field>
+		</record>
+		<menuitem  id="mmwalther_home_device_menu" 
+			       name="Home Devices"
+			       parent="menu_home" 
+                   sequence="10"
+			       action="mmwalther_home_device_action" />
+
+	</data>
+</odoo>

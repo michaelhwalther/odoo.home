@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+<!-- ______________________________________________________________________ -->
+<!-- Base structure to manage a digital home                                -->
+
+
+<!-- ______________________________________________________________________ -->
+<!-- Menu and View                                                          -->
+
+        <!-- Top menu item -->
+		<menuitem  id="menu_home" 
+			       name="My Home"
+                   sequence="10"/>
+
+	</data>
+</odoo>

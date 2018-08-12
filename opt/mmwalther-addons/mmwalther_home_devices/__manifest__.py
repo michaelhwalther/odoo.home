@@ -18,6 +18,7 @@ Electronic devices in a home
         'views/certificate_views.xml',
     ],
     'demo': [       # demo data is required to execute tests
+         'data/devices.xml',
 #        'data/analytic_demo.xml',
 #        'data/analytic_account_demo.xml',
     ],

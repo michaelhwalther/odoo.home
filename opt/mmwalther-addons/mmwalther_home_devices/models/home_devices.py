@@ -6,7 +6,6 @@ Created on 02.06.2018
 
 from odoo import models, fields, api
 import logging
-from odoo.release import description
 LOG = logging.getLogger(__name__)
 
 from odoo.tools.translate import _
@@ -41,5 +40,4 @@ class HomeDevice(models.Model):
     type  = fields.Selection(TYPES, required=True, track_visibility="onchange")
 
     active = fields.Boolean(default=True)
-
 

@@ -105,3 +105,12 @@ ENV/
 .settings
 .pydevproject
 
+# Other "regular" linux user files
+.bash_history
+.bash_logout
+.bashrc
+.cloud-locale-test.skip
+.profile
+.ssh/
+.viminfo
+tmp/

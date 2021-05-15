@@ -14,7 +14,6 @@ config['publisher_warranty_url'] = ''
 class publisher_warranty_contract(AbstractModel):
     _inherit = 'publisher_warranty.contract'
 
-    @api.multi
     def update_notification(self, cron_mode=True):
 
         _logger.info("NO More Spying Stuff")

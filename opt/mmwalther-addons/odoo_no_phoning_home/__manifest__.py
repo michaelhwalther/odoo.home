@@ -20,9 +20,11 @@
     'demo_xml': [],
     'test': [
     ],
-    'qweb' : [
-        "static/src/xml/base.xml",
-    ],
+    'assets' : {
+        "web.assets_qweb": [
+            "odoo_no_phoning_home/static/src/xml/base.xml",
+        ],
+    },
     'installable': True,
     'auto_install': True,
 #    'auto_install': False,

@@ -11,17 +11,22 @@
     """,
     'author': 'Michael Walther',
     'website': 'http://www.mmwalther.name/odoo',
-    'depends': ["base"],
+    'depends': ["base", "web"],
     'init_xml': [],
-    'data': [
-        "views/widescreen.xml",
-    ],
+#    'data': [
+#        "views/widescreen.xml",
+#    ],
     'demo_xml': [],
     'test': [
     ],
-    'qweb' : [
-        "static/src/xml/base.xml",
-    ],
+    'assets' : {
+        'web.assets_backend': [
+            'widescreen_sheet/static/src/css/widescreen_sheet.css',
+        ],
+        "web.assets_qweb": [
+            "widescreen_sheet/static/src/xml/base.xml",
+        ],
+    },
     'installable': True,
     'auto_install': True,
 }

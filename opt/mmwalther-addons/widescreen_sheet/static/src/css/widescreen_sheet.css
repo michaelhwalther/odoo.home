@@ -1,8 +1,10 @@
 @charset "utf-8";
-.openerp .oe_form_editable .oe_form_required.oe_form_field_one2many table.oe_list_content, .openerp .oe_form_editable .oe_form_required.oe_form_field_many2many table.oe_list_content {
+.o_web_client .o_form_editable .o_form_required.o_form_field_one2many table.o_list_content,
+.o_web_client .o_form_editable .o_form_required.o_form_field_many2many table.o_list_content {
   background-color: #d2d2ff !important;
 }
-.openerp .oe_form_editable .oe_form_invalid.oe_form_field_one2many table.oe_list_content, .openerp .oe_form_editable .oe_form_invalid.oe_form_field_many2many table.oe_list_content {
+.o_web_client .o_form_editable .o_form_invalid.o_form_field_one2many table.o_list_content,
+.o_web_client .o_form_editable .o_form_invalid.o_form_field_many2many table.o_list_content {
   background-color: #ff6666 !important;
 }
 
@@ -11,14 +13,11 @@
   max-width: 100% !important;
   margin: 16px !important;
 }
-.o_form_view div.oe_chatter {
-  box-sizing: border-box;
+.o_form_view div.o_Chatter {
   min-width: 682px;
-  max-width: 95% !important;
-  margin: 16px;
   padding: 16px 16px 48px;
 }
-.openerp .oe_form_field_one2many, .openerp .oe_form_field_many2many {
+.o_web_client .o_form_field_one2many, .o_web_client .o_form_field_many2many {
   overflow-x: auto;
 }
 .modal-dialog .o_form_sheet {
@@ -28,6 +27,14 @@
   width: 90%;
   height: 90%;
 }
-.openerp .oe_left {
+.o_web_client .o_left {
   width: 505px;
+}
+
+.modal-lg {
+  max-width: 100%;
+}
+
+.o_FormRenderer_chatterContainer {
+  max-width: initial;
 }

@@ -36,8 +36,8 @@ class HomeDevice(models.Model):
     
     name  = fields.Char()
     description  = fields.Text()
-    state = fields.Selection(STATES, default="discovered", required=True, track_visibility="onchange")
-    type  = fields.Selection(TYPES, required=True, track_visibility="onchange")
+    state = fields.Selection(STATES, default="discovered", required=True)
+    type  = fields.Selection(TYPES, required=True)
 
     active = fields.Boolean(default=True)
 

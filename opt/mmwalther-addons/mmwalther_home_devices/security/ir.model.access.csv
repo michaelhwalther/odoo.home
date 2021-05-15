@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_home_device_user,home.device.user,model_home_device,base.group_user,1,1,1,1
+access_home_device_discovery_user,home.device.discovery.user,model_home_device_discovery,base.group_user,1,1,1,1
+mmwalther_home_devices.access_home_device_discovery_item,access_home_device_discovery_item,mmwalther_home_devices.model_home_device_discovery_item,base.group_user,1,1,1,1
 access_home_certificate,access_home_certificate,model_home_certificate,base.group_user,1,1,1,1

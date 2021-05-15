@@ -1,1 +1,1 @@
-from . import home_devices, certificate
+from . import home_devices, certificate, home_device_discovery

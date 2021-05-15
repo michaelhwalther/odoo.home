@@ -104,7 +104,7 @@
 		<menuitem  id="mmwalther_certificate_menu" 
 			       name="Certificates"
 			       parent="menu_home" 
-                   sequence="10"
+                   sequence="20"
 			       action="mmwalther_certificate_action" />
 
 	</data>

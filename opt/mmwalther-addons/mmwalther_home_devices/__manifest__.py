@@ -15,6 +15,7 @@ Electronic devices in a home
         'security/ir.model.access.csv',
         'views/home_views.xml',
         'views/home_device_views.xml',
+        'views/home_device_discovery_views.xml',
         'views/certificate_views.xml',
     ],
     'demo': [       # demo data is required to execute tests

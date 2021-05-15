@@ -27,7 +27,7 @@ class Certificate(models.Model):
     
     name  = fields.Char()
     description  = fields.Text()
-    state = fields.Selection(STATES, default="draft", required=True, track_visibility="onchange")
+    state = fields.Selection(STATES, default="draft", required=True)
 
     active = fields.Boolean(default=True)
 

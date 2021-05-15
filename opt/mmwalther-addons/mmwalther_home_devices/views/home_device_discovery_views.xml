@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+<!-- ______________________________________________________________________ -->
+<!-- Simple UI to manage Home Device data                                   -->
+
+
+
+
+<!-- ______________________________________________________________________ -->
+<!-- Form View                                                              -->
+
+		<record id="mmwalther_home_device_discovery_form" model="ir.ui.view">
+			<field name="name">Home Device Discovery Form</field>
+			<field name="model">home.device.discovery</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<form string="Home Device Discovery Form">
+					<header>
+						<field name="state" widget="statusbar" clickable="0" statusbar_visible="draft,discovered" />
+					</header>
+					<sheet>
+						<field name="items">
+							<tree>
+								<field name="name"/>
+								<field name="ip"/>
+								<field name="mac"/>
+								<field name="lease_ends_iso"/>
+							</tree>
+						</field>
+					</sheet>
+					<footer>
+						<button name="discover" type="object"
+                                string="Start Discovery" states="draft"
+                                class="oe_highlight"/>
+						<button name="save_to_home_devices" type="object"
+                                string="Save to home devices" states="discovered"
+                                class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+					</footer>
+				</form>
+			</field>            
+		</record>
+
+
+
+<!-- ______________________________________________________________________ -->
+<!-- Menu and View                                                          -->
+
+		<record id="mmwalther_home_device_discovery_wizard"  model="ir.actions.act_window">
+			<field name="name">Home Device Discovery</field>
+			<field name="res_model">home.device.discovery</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem  id="mmwalther_home_device_discovery_menu" 
+			       name="Home Device Discovery"
+			       parent="menu_home" 
+                   sequence="15"
+			       action="mmwalther_home_device_discovery_wizard" />
+
+	</data>
+</odoo>
